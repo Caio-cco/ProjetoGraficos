@@ -54,14 +54,14 @@ export default function Graficos() {
             Visualização dos dados de matrícula da instituição por curso e período
           </p>
 
-          <div className="cards-container">
-            <div className="card-res card-mat">
+          <div className="cartao-container">
+            <div className="cartoes2">
               <h3>Total de Matrículas</h3>
               <p className="valor">{totalMatriculas}</p>
               <span className="desc">Soma de todos os cursos e períodos</span>
             </div>
 
-            <div className="card-res card-agend">
+            <div className="cartoes3">
               <h3>Total de Agendamentos</h3>
               <p className="valor">{totalAgendamentos}</p>
               <span className="desc">Soma de todas as datas registradas</span>
