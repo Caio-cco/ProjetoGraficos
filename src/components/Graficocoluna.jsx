@@ -102,9 +102,7 @@ export default function GraficoCursos() {
           <Legend />
           
          
-          {Object.keys(data[0])
-            .filter((key) => key !== "courseName")
-            .map((period, i) => (
+          {Object.keys(data[0]).filter((key) => key !== "courseName").map((period, i) => (
               <Bar
                 key={period}
                 dataKey={period}
