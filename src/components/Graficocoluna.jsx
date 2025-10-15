@@ -1,5 +1,5 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import './Graficoglobal.scss';
+import './graficoGlobal.scss';
 
 const dadosMatriculas = [
   { _id: { courseName: "Administração", periodName: "Manhã" }, totalInscritos: 32 },
