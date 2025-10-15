@@ -101,7 +101,7 @@ export default function GraficoCursos() {
           <Tooltip />
           <Legend />
           
-          {/* Cada período vira uma cor de barra diferente automaticamente */}
+         
           {Object.keys(data[0])
             .filter((key) => key !== "courseName")
             .map((period, i) => (
