@@ -1,6 +1,6 @@
-import GraficoLinha from '../components/Graficolinha';
-import GraficoColuna from '../components/Graficocoluna';
-import '../components/graficoglobal.scss';
+import Graficolinha from '../components/Graficolinha';
+import Graficocoluna from '../components/Graficocoluna';
+import '../components/Graficoglobal.scss';
 
 export default function Graficos() {
 
