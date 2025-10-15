@@ -29,8 +29,7 @@ export default function GraficoAgendamentos() {
   if (erro) {
     return (
       <div className="grafico-container2">
-        <h3>Erro ao carregar os dados da API.</h3>
-        <p>Verifique sua autenticação ou se a API está funcionando.</p>
+        <h3>Erro ao carregar os dados da API</h3>
       </div>
     );
   }
