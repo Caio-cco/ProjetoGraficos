@@ -112,7 +112,7 @@ main {
   color: #374151;
 }
 
-.cards-container {
+.cartao-container {
   display: flex;
   gap: 32px;
   justify-content: center;
@@ -120,46 +120,51 @@ main {
   flex-wrap: wrap;
 }
 
-.card-res {
+.cartoes2,
+.cartoes3 {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 24px;
-  width: 340px;       
-  height: 160px;      
+  width: 567px;
+  height: 160px;
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.card-res:hover {
+.cartoes2:hover,
+.cartoes3:hover {
   transform: translateY(-4px);
-  background-color: #dddddd; 
+  background-color: #dddddd;
 }
 
-.card-res h3 {
+.cartoes2 h3,
+.cartoes3 h3 {
   font-size: 18px;
   color: #374151;
   margin-bottom: 8px;
 }
 
-.card-res .valor {
+.cartoes2 .valor,
+.cartoes3 .valor {
   font-size: 36px;
   font-weight: 700;
   color: #1f2937;
   margin: 4px 0;
 }
 
-.card-res .desc {
+.cartoes2 .desc,
+.cartoes3 .desc {
   font-size: 14px;
   color: #6b7280;
 }
 
-.card-mat {
-  border-left: 6px solid #000000;
+.cartoes2 {
+  border-left: 6px solid #219e31;
 }
 
-.card-agend {
-  border-left: 6px solid #000000;
+.cartoes3 {
+  border-left: 6px solid #219e31;
 }
