@@ -37,6 +37,9 @@ export default function Graficos() {
 
   return (
     <div className="bloco">
+      <header>
+        <h2>Dashboard Frei</h2>
+      </header>
 
       <main>
         <div className="grafico-container">
