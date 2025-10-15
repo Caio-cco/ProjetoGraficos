@@ -37,10 +37,6 @@ export default function Graficos() {
 
   return (
     <div className="bloco">
-      <header>
-        <img src="src/components/frei.png" alt="Logo Frei" />
-        <h2>Dashboard Frei</h2>
-      </header>
 
       <main>
         <div className="grafico-container">
