@@ -35,11 +35,6 @@ export default function Graficos() {
     { _id: "24/10/2025", totalAgendamentos: 43 },
   ];
 
-
-  const totalMatriculas = dadosMatriculas.reduce((acc, item) => acc + item.totalInscritos, 0);
-  const totalAgendamentos = dadosAgendamentos.reduce((acc, item) => acc + item.totalAgendamentos, 0);
-
- 
   return (
     <div className="bloco">
       <header>
@@ -53,20 +48,6 @@ export default function Graficos() {
           <p className="subtitulo">
             Visualização dos dados de matrícula da instituição por curso e período
           </p>
-
-          <div className="cartao-container">
-            <div className="cartoes2">
-              <h3>Total de Matrículas</h3>
-              <p className="valor">{totalMatriculas}</p>
-              <span className="desc">Soma de todos os cursos e períodos</span>
-            </div>
-
-            <div className="cartoes3">
-              <h3>Total de Agendamentos</h3>
-              <p className="valor">{totalAgendamentos}</p>
-              <span className="desc">Soma de todas as datas registradas</span>
-            </div>
-          </div>
 
           <div>
             <Graficolinha data={dadosAgendamentos} />
