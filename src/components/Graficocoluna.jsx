@@ -9,17 +9,23 @@ export default function GraficoColuna() {
   const [dados, setDados] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.vestibular-insf.com.br/api/enrollments/count-by-course-period?password=r%26p0rts')
-    
-      .then(res => {
+    async function Requisicao() {
+      try {
+        const res = await axios.get('https://api.vestibular-insf.com.br/api/enrollments/count-by-course-period?password=r%26p0rts');
         const dadosFormatados = res.data.map(item => ({
           nome: `${item.courseName} - ${item.periodName}`,
           curso: item.courseName,
           totalInscritos: item.totalInscritos
         }));
         setDados(dadosFormatados);
-      })
-      .catch(err => console.error('Erro ao carregar dados da API:', err));
+      } 
+      
+      catch (err) {
+        console.error('Erro ao carregar dados da API:', err);
+      }
+    };
+
+    Requisicao();
   }, []);
 
   const cursosUnicos = [...new Set(dados.map(d => d.curso))];
@@ -33,21 +39,15 @@ export default function GraficoColuna() {
 
       <ResponsiveContainer width="100%" height={600}>
         <BarChart data={dados}>
-
           <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
-
           <XAxis dataKey="nome" angle={-34} textAnchor="end" height={190} fontSize={12} tick={{ fill: '#555' }} />
-
           <YAxis tick={{ fill: '#555' }} />
-
           <Tooltip contentStyle={{ backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: 8, color: '#111' }} />
-
           <Bar dataKey="totalInscritos" radius={[4, 4, 0, 0]}>
             {dados.map((d, i) => (
               <Cell key={i} fill={cores[cursosUnicos.indexOf(d.curso) % cores.length]} />
             ))}
           </Bar>
-
         </BarChart>
       </ResponsiveContainer>
 

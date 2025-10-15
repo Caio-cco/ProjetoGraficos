@@ -7,15 +7,22 @@ export default function GraficoAgendamentos() {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.vestibular-insf.com.br/api/appointments/count-by-date?password=r%26p0rts')
-      .then(res => {
+    async function Requisicao() {
+      try {
+        const res = await axios.get('https://api.vestibular-insf.com.br/api/appointments/count-by-date?password=r%26p0rts');
         const dadosFormatados = res.data.map(item => ({
           data: item.date,
           totalAgendamentos: item.totalAgendamentos
         }));
         setChartData(dadosFormatados);
-      })
-      .catch(err => console.error('Erro ao carregar dados da API:', err));
+      } 
+      
+      catch (err) {
+        console.error('Erro ao carregar dados da API:', err);
+      }
+    }
+
+    Requisicao();
   }, []);
 
   return (
