@@ -1,5 +1,5 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip,CartesianGrid,ResponsiveContainer,} from "recharts";
-import './Graficoglobal.scss';
+import './graficoGlobal.scss';
 
 export const dadosAgendamentos = [
   { _id: "08/10/2025", totalAgendamentos: 1 },
