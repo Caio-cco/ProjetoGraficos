@@ -7,7 +7,7 @@ export default function GraficoAgendamentos() {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.vestibular-insf.com.br/api/appointments/count-by-date?password=r6p0rts')
+    axios.get('https://api.vestibular-insf.com.br/api/appointments/count-by-date?password=r%26p0rts')
       .then(res => {
         const dadosFormatados = res.data.map(item => ({
           data: item.date,
