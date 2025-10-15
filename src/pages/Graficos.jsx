@@ -69,8 +69,8 @@ export default function Graficos() {
           </div>
 
           <div>
-            <GraficoLinha data={dadosAgendamentos} />
-            <GraficoColuna data={dadosMatriculas} />
+            <Graficolinha data={dadosAgendamentos} />
+            <Graficocoluna data={dadosMatriculas} />
           </div>
         </div>
       </main>
