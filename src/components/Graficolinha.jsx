@@ -1,15 +1,7 @@
-import React from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-  ResponsiveContainer,
-} from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip,CartesianGrid,ResponsiveContainer,} from "recharts";
+import './Graficoglobal.scss';
 
-const data = [
+export const dadosAgendamentos = [
   { _id: "08/10/2025", totalAgendamentos: 1 },
   { _id: "09/10/2025", totalAgendamentos: 3 },
   { _id: "10/10/2025", totalAgendamentos: 7 },
@@ -26,27 +18,49 @@ const data = [
 ];
 
 export default function GraficoAgendamentos() {
+  const chartData = dadosAgendamentos.map(({ _id, totalAgendamentos }) => ({
+    data: _id,
+    totalAgendamentos
+  }));
+
   return (
-    <div style={{ width: "100%", height: 400 }}>
-      <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>
-        Agendamentos por Data
-      </h2>
-      <ResponsiveContainer>
-        <LineChart data={data} margin={{ top: 20, right: 40, left: 0, bottom: 20 }}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="_id" />
-          <YAxis />
-          <Tooltip />
-          <Line
-            type="monotone"
-            dataKey="totalAgendamentos"
-            stroke="#8884d8"
-            strokeWidth={3}
-            dot={{ r: 5 }}
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+    <div className="grafico-container2">
+      <div className="grafico-header">
+        <h3>Agendamentos por Data - Gráfico de Linha</h3>
+        <p>Comparação dos agendamentos ao longo do tempo</p>
+      </div>
+
+      <div className="grafico-container">
+        <ResponsiveContainer width="100%" height={600}>
+          <LineChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
+            <XAxis
+              dataKey="data"
+              angle={-52}
+              textAnchor="end"
+              height={120}
+              fontSize={12}
+              tick={{ fill: '#555555' }}
+            />
+            <YAxis tick={{ fill: '#555555' }} />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: '#ffffff',
+                border: '1px solid #cccccc',
+                borderRadius: '8px',
+                color: '#111111'
+              }}
+            />
+            <Line
+              type="monotone"
+              dataKey="totalAgendamentos"
+              strokeWidth={3}
+              dot={{ fill: '#3b82f6', strokeWidth: 2, r: 6 }}
+              activeDot={{ r: 8, stroke: '#3b82f6', strokeWidth: 2 }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
